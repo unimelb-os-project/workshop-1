@@ -10,9 +10,12 @@ _str:
 
 .global _start
 _start:
-    la t0, uart             # t0 = 0x10000000
-    
-    la  t1, _str            # t1 = &_str;
+    csrr a0, mhartid        # a0 = mhartid
+    bnez a0, park           # if (a0 == 0) goto park;
+
+    la t0, uart             # t0 = uart
+    la t1, _str             # t1 = &_str;
+
 _loop:                      # while (1) {
     lb t2, 0x0(t1)          #      t2 = *t1;
     beq t2, zero, _end      #      if (t2 == 0) break;
@@ -22,5 +25,5 @@ _loop:                      # while (1) {
 _end:
 
 park:
-    wfi
-    j park
+    wfi                     # wait for interupt (sleep)
+    j park                  # goto park
