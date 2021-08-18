@@ -19,7 +19,7 @@ _start:
 _loop:                      # while (1) {
     lb t2, 0x0(t1)          #      t2 = *t1;
     beq t2, zero, _end      #      if (t2 == 0) break;
-    sb t2, 0x0(t0)          #      *t0 = t2;
+    sb t2, 0x0(t0)          #      *t0 = t2;  putchar(t2);
     addi t1, t1, 1          #      t1 = t1 + 1;
     j _loop                 #  }
 _end:

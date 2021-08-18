@@ -1,16 +1,59 @@
+break?
+
+# Motivation
+Not many people acctually need to write assembly. But in this workshop we are going to cover the basics.
+
+2 main reasons:
+ -  The workshop series: you need to write some assembly to make an operating system
+ -  General: good to understand one level bellow what you are writing
+
+# Instruction Set Architecture (ISA)
+
+Whats an ISA?
+ * A CPU is controlled by "machine code" ecoded into binary
+ * The ISA describes how this machine code is encoded and what resources the CPU has to offer
+ * The programming interface for a CPU 
+
+Some popular ISAs:
+    - x86_64/amd64 (Laptop/Desktop Coputers)
+    - ARMv8 (Phones + tables)
+
+RISC-V (Reduced instruction set computer)
+ - New, lots of research behind it
+ - Relativley simple
+ - Build with expandability and modularity in mind
+ - 32-bit width instructions
+ - 32bit or 64bit registers (also has some support for other options)
+
+
+We will be using RISCV 64bit
+
 # Memory
 ```
 Address    | 00 | 01 | 02 | 03 | ... | 19 | ...
 -----------+----+----+----+----+-...-+----+-...
-Data       | 25 | 68 |  1 | 11 | ... | 23 |
+Data       | 25 |  0 |  1 |  0 | ... | 23 |
 -----------+----+----+----+----+-...-+----+-...
-Variable   |       my_var      |
+Variable   | int my_var=65,561 |
 ```
 
 # General purpose registers in RISC-V
 ![alt text](/images/registers.png)
 
+Flow chart for memory -> reg -> cpu -> reg -> mem
+
+# notes for next time
+
+    Explain Labels 
+    Throw in ascii table
+
 # Obj dump
+
+riscv64-unknown-elf-objdump -S kernal.elf
+
+# Godball
+
+[https://godbolt.org/]()
 
 # Refrences
 

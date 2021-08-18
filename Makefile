@@ -8,10 +8,17 @@ endif
 
 SRC = $(wildcard ex$(EX)/src/*.c) $(wildcard ex$(EX)/src/*.s)
 LDS = ex$(EX)/ex$(EX).ld
+# LDS = link.ld
 
 ## Build flags
 # FLAGS = -march=rv32imac -mabi=ilp32 -ffreestanding -mcmodel=medany -nostdlib -fno-builtin -Wall
-FLAGS = -march=rv64gc -mabi=lp64 -ffreestanding -mcmodel=medany -nostdlib -fno-builtin -Wall -ggdb
+# riscv64-unknown-elf-gcc -march=rv64gc -mabi=lp64 -ffreestanding -mcmodel=medany -nostdlib -fno-builtin -Wall -T link.ld hello.s
+# riscv64-unknown-elf-objdump -S kernal.elf
+
+FLAGS = -march=rv64gc -mabi=lp64 -ffreestanding -mcmodel=medany -nostdlib -fno-builtin -Wall
+ifneq ($(DEBUG),)
+FLAGS += -ggdb
+endif
 
 ## Tools
 CC = riscv64-unknown-elf-gcc
