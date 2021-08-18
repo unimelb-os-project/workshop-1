@@ -9,16 +9,16 @@ Not many people acctually need to write assembly. But in this workshop we are go
 
 # Instruction Set Architecture (ISA)
 
-Whats an ISA?
- * A CPU is controlled by "machine code" ecoded into binary
+## Whats an ISA?
+ * A CPU is controlled by "machine code" encoded into binary
  * The ISA describes how this machine code is encoded and what resources the CPU has to offer
  * The programming interface for a CPU 
 
-Some popular ISAs:
-    - x86_64/amd64 (Laptop/Desktop Coputers)
+## Some popular ISAs:
+    - x86_64/amd64 (Laptop/Desktop Computers)
     - ARMv8 (Phones + tables)
 
-RISC-V (Reduced instruction set computer)
+## RISC-V (Reduced instruction set computer)
  - New, lots of research behind it
  - Relativley simple
  - Build with expandability and modularity in mind
@@ -32,20 +32,15 @@ We will be using RISCV 64bit
 ```
 Address    | 00 | 01 | 02 | 03 | ... | 19 | ...
 -----------+----+----+----+----+-...-+----+-...
-Data       | 25 |  0 |  1 |  0 | ... | 23 |
+Data       |  9 |  0 |  1 |  0 | ... | 23 |
 -----------+----+----+----+----+-...-+----+-...
-Variable   | int my_var=65,561 |
+Variable   | int my_var=65,545 | (65,545 = 0x00010009)
 ```
 
 # General purpose registers in RISC-V
 ![alt text](/images/registers.png)
 
 Flow chart for memory -> reg -> cpu -> reg -> mem
-
-# notes for next time
-
-    Explain Labels 
-    Throw in ascii table
 
 # Obj dump
 
