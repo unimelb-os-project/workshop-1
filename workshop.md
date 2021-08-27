@@ -1,5 +1,3 @@
-break?
-
 # Motivation
 Not many people acctually need to write assembly. But in this workshop we are going to cover the basics.
 
@@ -62,4 +60,8 @@ riscv64-unknown-elf-objdump -S kernal.elf
 ## Linker + ELF files
  1. [https://sourceware.org/binutils/docs/ld/Scripts.html]()
  2. [https://www.muppetlabs.com/~breadbox/software/tiny/teensy.html]()
+
+## Writing a Kernal
+ 1. [http://www.randomhacks.net/bare-metal-rust/]()
+ 2. [https://osblog.stephenmarz.com/index.html]()
 
